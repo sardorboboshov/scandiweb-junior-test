@@ -4,8 +4,8 @@ export default class AllPage extends Component {
   render() {
     return (
       <>
-        <Page categoryNumber={0} />
-        <Page categoryNumber={1} />
+        <Page categoryName={"clothes"} />
+        <Page categoryName={"tech"} />
       </>
     );
   }

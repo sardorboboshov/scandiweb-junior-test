@@ -1,12 +1,24 @@
 import React, { Component } from "react";
-import Category from "./components/Category/Category";
-// import { Route, Routes } from "react-router-dom";
+import Category from "./components/Routes/Routes";
 
-// import Tech from "./pages/Tech";
-// import Clothes from "./pages/Clothes";
+import { mapStateToPropsForProducts, mapDispatchToProps } from "./store/Maps";
+import { connect } from "react-redux";
+import CartOverlay from "./pages/Modal/CartOverlay";
 
-export default class App extends Component {
+class App extends Component {
   render() {
-    return <Category />;
+    return (
+      <div
+        onClick={() => {
+          this.props.close_currency();
+          this.props.close_overlay();
+        }}
+      >
+        <Category />
+        <CartOverlay />
+      </div>
+    );
   }
 }
+
+export default connect(mapStateToPropsForProducts, mapDispatchToProps)(App);
