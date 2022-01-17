@@ -52,7 +52,9 @@ class CartProductOverlay extends Component {
                       }
                     }
                     prices {
-                      currency
+                      currency {
+                        label
+                      }
                       amount
                     }
                     

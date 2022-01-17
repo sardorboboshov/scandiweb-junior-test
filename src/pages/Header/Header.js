@@ -79,7 +79,7 @@ class Header extends Component {
                 this.props.switch_show_currency();
               }}
             >
-              <div>{getSymbolFromCurrency(this.props.currency)}</div>
+              <div>{(this.props.currency.symbol)}</div>
               <img src={vector} alt="logo" className="vector" />
             </button>
           </li>

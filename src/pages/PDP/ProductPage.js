@@ -53,7 +53,9 @@ class ProductPage extends Component {
                     }
                   }
                   prices {
-                    currency
+                    currency {
+                      label
+                    }
                     amount
                   }
                   

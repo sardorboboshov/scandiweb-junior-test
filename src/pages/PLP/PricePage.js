@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import getSymbolFromCurrency from "currency-symbol-map";
 
-import { mapStateToPropsForProducts, mapDispatchToProps } from "../../store/Maps";
+import {
+  mapStateToPropsForProducts,
+  mapDispatchToProps,
+} from "../../store/Maps";
 
 import { connect } from "react-redux";
 

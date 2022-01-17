@@ -120,7 +120,9 @@ export const StyledLinkPr = styled.div`
   &:active {
     text-decoration: none;
   }
-
+  &:hover {
+    background-color: #268d41;
+  }
   color: var(--c-primary);
   display: flex;
   flex-direction: column;

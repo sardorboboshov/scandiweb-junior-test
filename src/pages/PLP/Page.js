@@ -42,7 +42,9 @@ class Page extends Component {
                     name
                   }
                 prices {
-                  currency
+                  currency {
+                    label
+                  }
                   amount
                 }
                 gallery

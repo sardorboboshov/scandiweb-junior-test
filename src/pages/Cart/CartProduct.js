@@ -50,7 +50,9 @@ export class CartProduct extends Component {
                       }
                     }
                     prices {
-                      currency
+                      currency {
+                        label
+                      }
                       amount
                     }
                     
