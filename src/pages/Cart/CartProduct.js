@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { v4 as uuidv4 } from "uuid";
 import { client } from "../../store/client";
 import getSymbolFromCurrency from "currency-symbol-map";
 import {
