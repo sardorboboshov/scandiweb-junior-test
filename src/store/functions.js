@@ -67,7 +67,9 @@ export const decrement_pr = (cart, payload) => {
 
   cart[index].count -= 1;
 
-  return cart;
+  let newCart = cart.filter((cartItem) => cartItem.count > 0);
+
+  return newCart;
 };
 
 export const measure_len = (arr) => {

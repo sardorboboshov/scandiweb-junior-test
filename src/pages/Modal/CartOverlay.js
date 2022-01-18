@@ -20,7 +20,7 @@ export class CartOverlay extends Component {
           </div>
           {this.props.cartItems.map((item, f_idx) => {
             return (
-              <div key={f_idx}>
+              <div key={JSON.stringify(item.attributes)}>
                 {item.count > 0 && (
                   <CartProductOverlay item={item} f_idx={f_idx} />
                 )}

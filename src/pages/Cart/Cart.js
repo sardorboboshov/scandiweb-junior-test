@@ -16,7 +16,7 @@ export class Cart extends Component {
 
         {this.props.cartItems.map((item, f_idx) => {
           return (
-            <div key={f_idx}>
+            <div key={JSON.stringify(item.attributes)}>
               {item.count > 0 && <CartProduct item={item} f_idx={f_idx} />}
             </div>
           );

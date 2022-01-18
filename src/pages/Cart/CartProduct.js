@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { v4 as uuidv4 } from "uuid";
 import { client } from "../../store/client";
 import getSymbolFromCurrency from "currency-symbol-map";
 import {
@@ -83,6 +84,19 @@ export class CartProduct extends Component {
       return <p>Loading...</p>;
     }
     if (this.state.data) {
+      const clickHandler = (name, length) => {
+        if (name === "prev") {
+          this.setState((prevState) => ({
+            img_number: (prevState.img_number - 1 + length) % length,
+          }));
+        }
+        if (name === "next") {
+          this.setState((prevState) => ({
+            img_number: (prevState.img_number + 1) % length,
+          }));
+        }
+      };
+
       return (
         <>
           <hr />
@@ -187,27 +201,21 @@ export class CartProduct extends Component {
                   <div className="chevron">
                     <div
                       className="left"
-                      onClick={() =>
-                        this.setState((prevState) => ({
-                          img_number:
-                            (prevState.img_number -
-                              1 +
-                              this.state.data.gallery.length) %
-                            this.state.data.gallery.length,
-                        }))
-                      }
+                      onClick={clickHandler.bind(
+                        this,
+                        "prev",
+                        this.state.data.gallery.length
+                      )}
                     >
                       {"<"}
                     </div>
                     <div
                       className="right"
-                      onClick={() =>
-                        this.setState((prevState) => ({
-                          img_number:
-                            (prevState.img_number + 1) %
-                            this.state.data.gallery.length,
-                        }))
-                      }
+                      onClick={clickHandler.bind(
+                        this,
+                        "next",
+                        this.state.data.gallery.length
+                      )}
                     >
                       {">"}
                     </div>
